@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.meran.example.DatasourceConfigTest" time="0.689" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.meran.example.DatasourceConfigTest" time="0.644" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib"/>
@@ -65,5 +65,5 @@
     <property name="ftp.nonProxyHosts" value="bsm.co.id|*.bsm.co.id|syariahmandiri.co.id|*.syariahmandiri.co.id|dev-bsinet.bankbsi.co.id|*.dev-bsinet.bankbsi.co.id|devel4.bankbsi.co.id|*.devel4.bankbsi.co.id|10.0.116.44"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.meran.example.DatasourceConfigTest" name="testConnectionToDB" time="0.689"/>
+  <testcase classname="com.meran.example.DatasourceConfigTest" name="testConnectionToDB" time="0.644"/>
 </testsuite>

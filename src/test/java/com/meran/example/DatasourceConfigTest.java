@@ -14,10 +14,7 @@ public class DatasourceConfigTest extends TestCase {
 
   @Override
   protected void setUp() throws Exception {
-    this.config = new DatasourceConfig(
-      "jdbc:postgresql://localhost:5432/postgres",
-      "postgres",
-      "admin123");
+    this.config = new DatasourceConfig();
   }
 
   @Test
