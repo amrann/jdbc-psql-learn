@@ -1,0 +1,7 @@
+package 'entity' ini disesuaikan dengan schema yg ada. Misal, di project ini punya schema 'perpustakaan' dan memiliki
+beberapa table yaitu:
+ - Anggota
+ - Buku
+ - Penerbit
+ - Transaksi
+ - TransaksiDetail
