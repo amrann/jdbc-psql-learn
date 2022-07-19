@@ -11,7 +11,7 @@ import java.sql.Date;
 @NoArgsConstructor
 public class TransaksiDetail {
   private String id;
-  private Transaksi transaksi;
-  private Buku buku;
+  private Transaksi transaksi; // relasi ke table Transaksi
+  private Buku buku; // relasi ke table Buku
   private Date tglKembali;
 }
