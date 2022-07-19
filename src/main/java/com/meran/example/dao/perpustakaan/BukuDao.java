@@ -22,6 +22,7 @@ public class BukuDao implements CrudRepository<Buku, String> {
     PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
     ps.setString(1, value.getNama());
     ps.setString(2, value.getIsbn());
+    // value Penerbit dipertimbangkan karena class Buku berelasi dengan Penerbit
     if (value.getPenerbit() != null) {
       ps.setNull(3, Types.VARCHAR);
     } else {
