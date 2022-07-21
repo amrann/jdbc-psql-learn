@@ -6,7 +6,6 @@ import com.meran.example.entity.perpustakaan.Penerbit;
 import junit.framework.TestCase;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;

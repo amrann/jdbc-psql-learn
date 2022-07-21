@@ -1,5 +1,6 @@
 com/meran/example/entity/perpustakaan/Buku.class
 com/meran/example/App.class
+com/meran/example/dao/perpustakaan/AnggotaDao.class
 com/meran/example/config/DatasourceConfig.class
 com/meran/example/entity/perpustakaan/Transaksi.class
 com/meran/example/dao/perpustakaan/BukuDao.class
@@ -8,3 +9,4 @@ com/meran/example/dao/perpustakaan/PenerbitDao.class
 com/meran/example/dao/CrudRepository.class
 com/meran/example/entity/perpustakaan/Penerbit.class
 com/meran/example/entity/perpustakaan/TransaksiDetail.class
+com/meran/example/dao/perpustakaan/TransaksiDao.class

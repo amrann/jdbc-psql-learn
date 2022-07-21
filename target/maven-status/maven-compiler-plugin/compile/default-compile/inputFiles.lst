@@ -1,10 +1,12 @@
 /Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/dao/CrudRepository.java
 /Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/dao/perpustakaan/PenerbitDao.java
+/Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/dao/perpustakaan/AnggotaDao.java
 /Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/dao/perpustakaan/BukuDao.java
 /Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/App.java
 /Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/entity/perpustakaan/Penerbit.java
 /Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/entity/perpustakaan/TransaksiDetail.java
 /Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/config/DatasourceConfig.java
 /Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/entity/perpustakaan/Buku.java
+/Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/dao/perpustakaan/TransaksiDao.java
 /Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/entity/perpustakaan/Transaksi.java
 /Users/meran/IdeaProjects/jdbc-psql-learn-2022/src/main/java/com/meran/example/entity/perpustakaan/Anggota.java

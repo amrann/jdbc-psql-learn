@@ -28,12 +28,13 @@ public class BukuDao implements CrudRepository<Buku, String> {
     } else {
       ps.setString(3, value.getPenerbit().getId());
     }
-    int row = ps.executeUpdate();
+    ps.executeUpdate();
     ResultSet rs = ps.getGeneratedKeys();
     if (rs.next()) {
       value.setId(rs.getString("id"));
     }
     ps.close();
+    rs.close();
     return value;
   }
 
@@ -49,7 +50,7 @@ public class BukuDao implements CrudRepository<Buku, String> {
       ps.setString(3, value.getPenerbit().getId());
     }
     ps.setString(4, value.getId());
-    int row = ps.executeUpdate();
+    ps.executeUpdate();
     ps.close();
     return value;
   }

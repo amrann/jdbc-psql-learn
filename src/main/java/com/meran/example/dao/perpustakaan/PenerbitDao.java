@@ -23,7 +23,7 @@ public class PenerbitDao implements CrudRepository<Penerbit, String> {
     PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
     ps.setString(1, value.getNama());
     ps.setString(2, value.getAlamat());
-    int row = ps.executeUpdate();
+    ps.executeUpdate();
     ResultSet rs = ps.getGeneratedKeys();
     if (rs.next()) {
       value.setId(rs.getString("id"));
@@ -38,7 +38,7 @@ public class PenerbitDao implements CrudRepository<Penerbit, String> {
     ps.setString(1, value.getNama());
     ps.setString(2, value.getAlamat());
     ps.setString(3, value.getId());
-    int row = ps.executeUpdate();
+    ps.executeUpdate();
     ps.close();
     return value;
   }
