@@ -57,13 +57,17 @@ public class TestTransaksiDao extends TestCase {
           null,
           null,
           java.orElse(null),
-          Date.valueOf(tgglKembali)
+          Date.valueOf(tgglKembali),
+          null,
+          null
         ),
         new TransaksiDetail(
           null,
           null,
           java2.orElse(null),
-          Date.valueOf(tgglKembali)
+          Date.valueOf(tgglKembali),
+          null,
+          null
         )
       )
     );
@@ -78,6 +82,31 @@ public class TestTransaksiDao extends TestCase {
       log.info("data transaksi {}", tr);
       log.info("data detail transaksi {}", tr.getTransaksiDetails());
     }
+    connection.close();
+  }
+
+  @Test
+  public void testUpdate() throws SQLException{
+    DataSource dataSource = this.config.getDataSource();
+    Connection connection = dataSource.getConnection();
+    log.info("status connected");
+
+    TransaksiDao transaksiDao = new TransaksiDao(connection);
+    Optional<TransaksiDetail> bukuJava2Meran = transaksiDao.findByTransactionIdAndBookId("c30044fb-5f81-4640-879c-b012088a63d5", "001");
+    transaksiDao.update(bukuJava2Meran.orElse(null));
+
+    connection.close();
+  }
+
+  @Test
+  public void testHapus() throws SQLException{
+    DataSource dataSource = this.config.getDataSource();
+    Connection connection = dataSource.getConnection();
+    log.info("status connected");
+
+    TransaksiDao transaksiDao = new TransaksiDao(connection);
+    transaksiDao.hapusById("c30044fb-5f81-4640-879c-b012088a63d5");
+
     connection.close();
   }
 }

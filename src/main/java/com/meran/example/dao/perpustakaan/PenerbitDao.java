@@ -118,7 +118,6 @@ public class PenerbitDao implements CrudRepository<Penerbit, String> {
   @Override
   public List<Penerbit> findAll() throws SQLException {
     List<Penerbit> list = new ArrayList<>();
-    //language=POSTGRES-SQL
     String query = "select id as id,\n" +
       "  nama as nama,\n" +
       "  alamat as alamat\n" +

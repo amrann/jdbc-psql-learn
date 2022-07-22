@@ -13,3 +13,9 @@ references perpustakaan.buku(id) on update cascade on delete cascade;
 alter table perpustakaan.transaksi_detail
 add constraint fk_transaksi_id foreign key (transaksi_id)
 references perpustakaan.transaksi(id) on update cascade on delete cascade;
+
+alter table perpustakaan.transaksi_detail
+add column is_return boolean default false;
+
+alter table perpustakaan.transaksi_detail
+add column last_update_date date;

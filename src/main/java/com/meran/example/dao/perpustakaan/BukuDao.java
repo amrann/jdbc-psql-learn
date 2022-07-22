@@ -67,7 +67,6 @@ public class BukuDao implements CrudRepository<Buku, String> {
 
   @Override
   public Optional<Buku> findById(String value) throws SQLException {
-    //language=POSTGRES-SQL
     String query = "select b.id as bukuId,\n" +
       "  b.nama as bukuNama,\n" +
       "  b.isbn as isbn,\n" +
@@ -104,7 +103,6 @@ public class BukuDao implements CrudRepository<Buku, String> {
   @Override
   public List<Buku> findAll() throws SQLException {
     List<Buku> list = new ArrayList<>();
-    //language=POSTGRES-SQL
     String query = "select b.id as bukuId,\n" +
       "  b.nama as bukuNama,\n" +
       "  b.isbn as isbn,\n" +

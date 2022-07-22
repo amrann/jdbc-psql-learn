@@ -14,4 +14,6 @@ public class TransaksiDetail {
   private Transaksi transaksi; // relasi ke table Transaksi
   private Buku buku; // relasi ke table Buku
   private Date tglKembali;
+  private Boolean isReturn;
+  private Date lastUpdateDate;
 }
