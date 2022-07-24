@@ -124,7 +124,8 @@ public class TransaksiDao implements CrudRepository<Transaksi, String> {
           rs.getString("pub_nama"),
           rs.getString("pub_alamat"),
           new ArrayList<>()
-        )
+        ),
+        new ArrayList<>()
       ),
       rs.getDate("trxD_tglkembali"),
       rs.getBoolean("trxD_isreturn"),
@@ -222,7 +223,8 @@ public class TransaksiDao implements CrudRepository<Transaksi, String> {
             rs.getString("penerbit_nama"),
             rs.getString("penerbit_alamat"),
             new ArrayList<>()
-          )
+          ),
+          new ArrayList<>()
         ),
         rs.getDate("transaksidetail_tgl_kembali"),
         rs.getBoolean("transaksidetail_status_kembali"),

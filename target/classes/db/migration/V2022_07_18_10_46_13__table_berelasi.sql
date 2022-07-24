@@ -19,3 +19,11 @@ add column is_return boolean default false;
 
 alter table perpustakaan.transaksi_detail
 add column last_update_date date;
+
+alter table perpustakaan.penulis_buku
+add constraint fk_penulis_buku_id foreign key (buku_id)
+references perpustakaan.buku (id) on update cascade on delete cascade;
+
+alter table perpustakaan.penulis_buku
+add constraint fk_penulis_buku_penulis_id foreign key (penulis_id)
+references perpustakaan.penulis (id) on update cascade on delete cascade;

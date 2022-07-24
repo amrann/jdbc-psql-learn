@@ -30,3 +30,15 @@ create table perpustakaan.transaksi_detail (
 	buku_id			  character varying(64) not null,
 	tgl_kembali		date                  not null
 );
+
+create table perpustakaan.penulis (
+  id 		  character varying(64) not null primary key default gen_random_uuid(),
+	nama    character varying(64) not null,
+	alamat  text
+);
+
+create table perpustakaan.penulis_buku (
+  id 				  character varying(64) not null primary key default gen_random_uuid(),
+	buku_id			character varying(64) not null,
+	penulis_id  character varying(64) not null
+);

@@ -11,3 +11,13 @@ insert into perpustakaan.anggota(id, nomor_ktp, nama, alamat)
 values	('001', '6204123434', 'Dimas Maryanto', 'Bandung'),
 		('002', '6204123435', 'Meran', 'Maros'),
 		('003', '6204123436', 'Sopyan', 'Bulukumba');
+
+insert into perpustakaan.penulis(id, nama, alamat)
+values ('001', 'Hera Kusnadi', 'Bandung'),
+       ('002', 'Aksara Tari', 'Makassar'),
+       ('003', 'Henry Pena', 'Jakarta Pusat');
+
+insert into perpustakaan.penulis_buku(buku_id, penulis_id)
+values ('001', '001'),
+       ('001', '002'),
+       ('002', '003');

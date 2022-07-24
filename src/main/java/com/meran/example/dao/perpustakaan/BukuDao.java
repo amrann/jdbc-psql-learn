@@ -3,6 +3,7 @@ package com.meran.example.dao.perpustakaan;
 import com.meran.example.dao.CrudRepository;
 import com.meran.example.entity.perpustakaan.Buku;
 import com.meran.example.entity.perpustakaan.Penerbit;
+import com.meran.example.entity.perpustakaan.Penulis;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -93,7 +94,8 @@ public class BukuDao implements CrudRepository<Buku, String> {
         rs.getString("penerbitNama"),
         rs.getString("penerbitAlamat"),
         new ArrayList<>()
-      )
+      ),
+      this.findPenulisByBukuId(rs.getString("bukuId"))
     );
     ps.close();
     rs.close();
@@ -125,7 +127,8 @@ public class BukuDao implements CrudRepository<Buku, String> {
           rs.getString("penerbitNama"),
           rs.getString("penerbitAlamat"),
           new ArrayList<>()
-        )
+        ),
+        this.findPenulisByBukuId(rs.getString("bukuId"))
       );
       list.add(data);
     }
@@ -133,6 +136,33 @@ public class BukuDao implements CrudRepository<Buku, String> {
     rs.close();
     return list;
   }
+
+  public List<Penulis> findPenulisByBukuId(String value) throws SQLException {
+    List<Penulis> penulisList = new ArrayList<>();
+    String query = "select pb.penulis_id as pelisbuk_penulis_id,\n" +
+      "       p.nama        as penulis_nama,\n" +
+      "       p.alamat      as penulis_alamat\n" +
+      "from perpustakaan.penulis_buku pb\n" +
+      "  left join perpustakaan.penulis p on pb.penulis_id = p.id\n" +
+      "where pb.buku_id = ?";
+
+    PreparedStatement ps = connection.prepareStatement(query);
+    ps.setString(1, value);
+    ResultSet rs = ps.executeQuery();
+    while (rs.next()) {
+      Penulis penulis = new Penulis(
+        rs.getString("pelisbuk_penulis_id"),
+        rs.getString("penulis_nama"),
+        rs.getString("penulis_alamat"),
+        new ArrayList<>()
+      );
+      penulisList.add(penulis);
+    }
+    ps.close();
+    rs.close();
+    return penulisList;
+  }
+
 
   @Override
   public List<Buku> findAll(Long start, Long limit, Long orderIndex, String orderDirection, Buku param) throws SQLException {
