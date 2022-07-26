@@ -67,7 +67,6 @@ public class TransaksiDao implements CrudRepository<Transaksi, String> {
   }
 
   public Optional<TransaksiDetail> findByTransactionIdAndBookId(String transactionId, String bookId) throws SQLException {
-    //language=POSTGRES-SQL
     String query = "select trxD.id   as trxD_id,\n" +
       "       trxD.buku_id           as trxD_bukuid,\n" +
       "       trxD.tgl_kembali       as trxD_tglkembali,\n" +

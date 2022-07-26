@@ -13,6 +13,11 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(exclude = {"listBuku"})
 public class Penulis {
+
+  public Penulis(String id) {
+    this.id = id;
+  }
+
   private String id;
   private String nama;
   private String alamat;

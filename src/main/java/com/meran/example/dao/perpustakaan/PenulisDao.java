@@ -5,10 +5,7 @@ import com.meran.example.entity.perpustakaan.Buku;
 import com.meran.example.entity.perpustakaan.Penerbit;
 import com.meran.example.entity.perpustakaan.Penulis;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -22,17 +19,42 @@ public class PenulisDao implements CrudRepository<Penulis, String> {
 
   @Override
   public Penulis simpan(Penulis value) throws SQLException {
-    return null;
+    String query = "insert into perpustakaan.penulis (nama, alamat) values (?, ?)";
+    PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+    ps.setString(1, value.getNama());
+    ps.setString(2, value.getAlamat());
+    ps.executeUpdate();
+    ResultSet rs = ps.getGeneratedKeys();
+    if (rs.next()) {
+      value.setId(rs.getString("id"));
+    }
+    ps.close();
+    rs.close();
+    return value;
   }
 
   @Override
   public Penulis update(Penulis value) throws SQLException {
-    return null;
+    String query = "update perpustakaan.penulis\n" +
+      "set nama = ?, alamat = ?\n" +
+      "where id = ?";
+    PreparedStatement ps = connection.prepareStatement(query);
+    ps.setString(1, value.getNama());
+    ps.setString(2, value.getAlamat());
+    ps.setString(3, value.getId());
+    ps.executeUpdate();
+    ps.close();
+    return value;
   }
 
   @Override
   public Boolean hapusById(String value) throws SQLException {
-    return null;
+    String query = "delete from perpustakaan.penulis where id = ?";
+    PreparedStatement ps = connection.prepareStatement(query);
+    ps.setString(1, value);
+    int row = ps.executeUpdate();
+    ps.close();
+    return row >= 1;
   }
 
   @Override
