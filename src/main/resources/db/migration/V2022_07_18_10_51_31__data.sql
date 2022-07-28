@@ -21,3 +21,8 @@ insert into perpustakaan.penulis_buku(buku_id, penulis_id)
 values ('001', '001'),
        ('001', '002'),
        ('002', '003');
+
+
+insert into bank.nasabah(cif, nama, npwp, siup, ktp, foto, type, created_date, created_by)
+values ('001', 'Meran Maruusy', null, null, '7368452341859993', null, 1, now(), 'migration'),
+       ('002', 'PT. Kuat Kita Bersama', '3465784567', '3456', null, null, 2, now(), 'migration');

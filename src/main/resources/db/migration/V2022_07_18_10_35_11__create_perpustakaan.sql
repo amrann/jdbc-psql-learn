@@ -1,1 +1,2 @@
 --create schema perpustakaan;
+--create schema bank;
