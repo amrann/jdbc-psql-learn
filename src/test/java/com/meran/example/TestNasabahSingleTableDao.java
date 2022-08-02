@@ -1,7 +1,7 @@
 package com.meran.example;
 
 import com.meran.example.config.DatasourceConfig;
-import com.meran.example.dao.bank.NasabahDao;
+import com.meran.example.dao.bank.NasabahSingleTableDao;
 import com.meran.example.entity.bank.BadanUsaha;
 import com.meran.example.entity.bank.Nasabah;
 import com.meran.example.entity.bank.Perorangan;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Slf4j
-public class TestNasabahDao extends TestCase {
+public class TestNasabahSingleTableDao extends TestCase {
   private DatasourceConfig config;
 
   @Override
@@ -33,7 +33,7 @@ public class TestNasabahDao extends TestCase {
 //    connection.setAutoCommit(false);
     log.info("status connected");
 
-    NasabahDao nasabahDao = new NasabahDao(connection);
+    NasabahSingleTableDao nasabahDao = new NasabahSingleTableDao(connection);
 
     Perorangan perorangan = new Perorangan();
     perorangan.setNama("Amran Maruusy");
@@ -63,7 +63,7 @@ public class TestNasabahDao extends TestCase {
     Connection connection = dataSource.getConnection();
     log.info("status connected");
 
-    NasabahDao nasabahDao = new NasabahDao(connection);
+    NasabahSingleTableDao nasabahDao = new NasabahSingleTableDao(connection);
 
     Optional<Nasabah> optionalNasabah = nasabahDao.findById("001");
     assertTrue("Data nasabah 001 di temukan", optionalNasabah.isPresent());
@@ -82,7 +82,7 @@ public class TestNasabahDao extends TestCase {
     Connection connection = dataSource.getConnection();
     log.info("status connected");
 
-    NasabahDao nasabahDao = new NasabahDao(connection);
+    NasabahSingleTableDao nasabahDao = new NasabahSingleTableDao(connection);
 
     List<Nasabah> nasabahList = nasabahDao.findAll();
     long jumlahNsbhPerorangan = nasabahList.stream().filter(dt -> dt instanceof Perorangan).count();
